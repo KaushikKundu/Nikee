@@ -5,45 +5,47 @@ import { statistics } from "../constants";
 const Hero = () => {
   return (
     <section
-      id="home"
-      className="w-full border-2 border-red-500 flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container"
+      id='home'
+      className='w-full flex lg:flex-row flex-col justify-center min-h-screen gap-1 max-container'
     >
-      <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28">
-        <p className="text-xl text-coral-red font-montserrat">
-          Our Summer Collection
+      <div className='relative lg:w-2/5 flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28'>
+        <p className='text-xl font-montserrat text-coral-red'>
+          Our Summer collections
         </p>
-        <h1 className="text-4xl font-palanquin font-bold mt-10 max-sm:text-[72px] max-sm:leading-none">
-          <span className="xl:bg-white xl:whitespace-nowrap z-10 relative pr-10">
+
+        <h1 className='mt-10 font-montserrat text-[72px] font-bold leading-tight'>
+          <span className='whitespace-nowrap relative z-10'>
             The New Arrival
           </span>
           <br />
-          <span className="text-coral-red inline-block mr-3">Nike</span>
-          Shoes
+          <span className='text-coral-red inline-block mt-3'>Nike</span> Shoes
         </h1>
-        <p className="mt-10 text-lg font-montserrat text-slate-gray leading-8 mb-14 sm:max-w-sm">
-          {" "}
+        <p className='font-montserrat text-slate-gray text-lg leading-8 mt-5 mb-12 sm:max-w-sm'>
           Discover stylish Nike arrivals, quality comfort, and innovation for
           your active life.
         </p>
-        <Button label="Shop Now" iconUrl={arrowRight} />
-        <div className="flex justify-starts items-start gap-16 mt-10 w-full flex-wrap">
-          {statistics.map((item) => (
-            <div key={item.label}>
-              <p className="font-bold text-3xl leading-7 font-montserrat">
-                {item.value}
+
+        <Button label='Shop now' iconURL={arrowRight} />
+
+        <div className='flex justify-start items-start w-full mt-20 gap-8 whitespace-nowrap'>
+          {statistics.map((stat, index) => (
+            <div key={index}>
+              <p className='text-4xl font-palanquin font-bold'>{stat.value}</p>
+              <p className='leading-7 font-montserrat text-slate-gray'>
+                {stat.label}
               </p>
-              <p className="text-slate-gray font-palanquin ">{item.label}</p>
             </div>
           ))}
         </div>
-      </div>
-      <div className="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
+    </div>
+
+      <div className='relative flex-1 flex justify-center items-center lg:min-h-screen max-xl:py-20 bg-primary bg-hero bg-cover bg-center'>
         <img
           src={bigShoe1}
-          alt="heroshoe"
-          className="object-contain z-10 relative"
-          width={500}
+          alt='shoe collection'
+          width={550}
           height={500}
+          className='object-contain relative z-10'
         />
       </div>
     </section>
